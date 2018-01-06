@@ -1,0 +1,13 @@
+.title {
+  font-family: 'Marcellus SC', serif;
+}
+
+.is-sp {
+  display: none;
+}
+
+@media screen and (max-width: $sp-width) {
+  .is-sp {
+    display: block;
+  }
+}
