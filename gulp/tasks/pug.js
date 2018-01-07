@@ -2,8 +2,8 @@ import gulp from 'gulp';
 import { plumber, notify, pug, rename } from '../plugins';
 import { pug as conf } from '../conf';
 
-gulp.task('pug', () => {
-  return gulp.src(conf.src)
+gulp.task('pug', done => {
+  gulp.src(conf.src)
     .pipe(plumber({
       errorHandler: notify.onError('<%= error.message %>')
     }))
@@ -12,4 +12,5 @@ gulp.task('pug', () => {
       path.dirname = path.dirname.replace('html', '.');
     }))
     .pipe(gulp.dest(conf.dst));
+  done();
 });

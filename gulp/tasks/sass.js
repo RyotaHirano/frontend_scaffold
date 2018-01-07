@@ -15,8 +15,8 @@ const postcssProcessors = [
   require('postcss-flexbugs-fixes'),
   require('postcss-partial-import')()
 ];
-gulp.task('sass', () => {
-  return gulp.src(conf.src)
+gulp.task('sass', done => {
+  gulp.src(conf.src)
     .pipe(sass({
       outputStyle: 'expanded',
       includePaths: ['node_modules']
@@ -30,4 +30,5 @@ gulp.task('sass', () => {
       }
     })))
     .pipe(gulp.dest(destCssDir));
+  done();
 });

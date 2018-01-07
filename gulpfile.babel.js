@@ -55,10 +55,7 @@ gulp.task('build',
   gulp.series(
     'clean:build',
     gulp.parallel('pug', 'sass', 'webpack', 'imagemin:build'),
-    'copy:build',
-    function(done) {
-      done();
-    }
+    'copy:build'
   )
 )
 

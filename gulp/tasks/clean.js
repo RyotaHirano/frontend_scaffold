@@ -2,9 +2,9 @@ import gulp from 'gulp';
 import del from 'del';
 import { clean as conf } from '../conf';
 
-gulp.task('clean:build', cb => {
+gulp.task('clean:build', done => {
   del(conf.build.path).then(paths => {
-    console.log('Delete:\n', paths.join('\n'));
-    cb();
+    console.log('Deleted:\n', paths.join('\n'));
+    done();
   });
 });

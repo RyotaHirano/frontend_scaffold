@@ -19,10 +19,10 @@ if (isProduction) {
 }
 const webpackCompiler = webpack(webpackConfig);
 
-gulp.task('webpack', cb => {
+gulp.task('webpack', done => {
   webpackCompiler.run((err, stats) => {
     if (err) { throw new PluginError('webpack', err); }
     log('[webpack]', stats.toString({ colors: true }));
-    cb();
+    done();
   });
 });
